@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PersonController::class, 'index']);
+Route::get('/create', [PersonController::class, 'create']);
+Route::get('/{id}', [PersonController::class, 'show']);
+Route::get('/{id}/edit', [PersonController::class, 'edit']);
