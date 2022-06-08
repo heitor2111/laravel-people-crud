@@ -6,34 +6,30 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class User
+ * Class Contact
  *
  * @property int $id
- * @property string $username
- * @property string $password
+ * @property string $description
+ * @property string $contact
  * @property int $person_id
  *
  * @property Person $person
  *
  * @package App\Models
  */
-class User extends Model
+class Contact extends Model
 {
     use HasFactory;
-    protected $table = 'users';
+    protected $table = 'contacts';
     public $timestamps = false;
 
     protected $casts = [
         'person_id' => 'int'
     ];
 
-    protected $hidden = [
-        'password'
-    ];
-
     protected $fillable = [
-        'username',
-        'password',
+        'description',
+        'contact',
         'person_id'
     ];
 
