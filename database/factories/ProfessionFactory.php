@@ -3,16 +3,16 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\User;
+use App\Models\Profession;
 
-class UserFactory extends Factory
+class ProfessionFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Profession::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +22,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'username' => $this->faker->unique()->userName(),
-            'password' => bcrypt($this->faker->password),
-            'person_id' => \App\Models\Person::factory(),
+            'name' => $this->faker->jobTitle,
         ];
     }
 }
