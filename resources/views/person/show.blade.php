@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="w-100 d-flex justify-content-end gap-2">
-        <a href="#" role="button" class="btn btn-warning">Editar</a>
+        <a href="{{ route('personEdit', $person->id) }}" class="btn btn-warning">Editar</a>
 
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDelete">
             Excluir
