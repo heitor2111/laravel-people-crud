@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PersonController::class, 'index']);
 Route::get('/create', [PersonController::class, 'create']);
 Route::get('/{id}', [PersonController::class, 'show']);
-Route::get('/{id}/edit', [PersonController::class, 'edit']);
+Route::get('/{id}/edit', [PersonController::class, 'edit'])->name('personEdit');
+Route::get('/{id}/delete', [PersonController::class, 'delete'])->name('personDelete');
