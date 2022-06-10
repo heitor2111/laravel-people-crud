@@ -13,11 +13,11 @@
         </thead>
         <tbody>
             @forelse ($people as $person)
-                <tr style="cursor: pointer;" onclick="location.href = '{{ url($person->id) }}'">
+                <tr style="cursor: pointer;" onclick="location.href = '{{ route('personShow', $person->id) }}'">
                     <td>{{ $person->first_name . ' ' . $person->last_name }}</td>
                     <td>{{ $person->document }}</td>
-                    <td>{{ $person->birth_date->format('d/m/Y') }}</td>
-                    <td>{{ $person->created_at->format('d/m/Y H:m:s') }}</td>
+                    <td>{{ $person->birth_date ? $person->birth_date->format('d/m/Y') : '-' }}</td>
+                    <td>{{ $person->created_at ? $person->created_at->format('d/m/Y H:m:s') : '-' }}</td>
                     <td class="text-center">{{ $person->contacts()->count() }}</td>
                 </tr>
             @empty

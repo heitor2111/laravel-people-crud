@@ -17,12 +17,16 @@
                 <p class="my-1">ID: {{ $person->id }}</p>
                 <p class="my-1">Nome: {{ $person->first_name }}</p>
                 <p class="my-1">Sobrenome: {{ $person->last_name }}</p>
-                <p class="my-1">Data de Nascimento: {{ $person->birth_date->format('d/m/Y') }}</p>
+                <p class="my-1">Data de Nascimento: {{
+                    $person->birth_date ? $person->birth_date->format('d/m/Y') : '-'
+                }}</p>
                 <p class="my-1">Número do Documento: {{ $person->document }}</p>
-                <p class="my-1">Data da Criação: {{ $person->created_at }}</p>
-                <p class="my-1">Última Modificação:
-                    {{ $person->created_at === $person->updated_at ? '-' : $person->updated_at }}
-                </p>
+                <p class="my-1">Data da Criação: {{
+                    $person->created_at ? $person->created_at->format('d/m/Y H:m:s') : '-'
+                }}</p>
+                <p class="my-1">Última Modificação: {{
+                    $person->updated_at ? $person->updated_at->format('d/m/Y H:m:s') : '-'
+                }}</p>
 
                 <p class="my-1">Profissão:
                     @foreach ($person->professions as $profession)
