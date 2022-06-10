@@ -27,10 +27,10 @@
 
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ url('/') }}">Home</a>
+                    <a class="nav-link text-white" href="{{ route('personHome') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ url('/create') }}">Nova Pessoa</a>
+                    <a class="nav-link text-white" href="{{ route('personCreate') }}">Nova Pessoa</a>
                 </li>
             </ul>
         </div>
